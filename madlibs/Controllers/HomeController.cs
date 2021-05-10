@@ -36,5 +36,16 @@ namespace MadLibs.Controllers
       SciFiMadLibs.PastTenseVerb = pastTenseVerb;
       return View(SciFiMadLibs);
     }
+    [Route("/CartoonForm")]
+    public ActionResult CartoonForm() { return View(); }
+
+    [Route("/CartoonTale")]
+    public ActionResult CartoonTale(string adjective, string noun)
+    {
+      MadLibsGame CartoonMadLibs = new MadLibsGame();
+      CartoonMadLibs.Adjective = adjective;
+      CartoonMadLibs.Noun = noun;
+      return View(CartoonMadLibs);
+    }
   }
 }
